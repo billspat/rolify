@@ -20,7 +20,6 @@ module Rolify
       role
     end
     alias_method :grant, :add_role
-    deprecate :has_role, :add_role
 
     def has_role?(role_name, resource = nil)
       if new_record?
@@ -56,7 +55,6 @@ module Rolify
     end
     
     alias_method :revoke, :remove_role
-    deprecate :has_no_role, :remove_role
 
     def roles_name
       self.roles.select(:name).map { |r| r.name }
